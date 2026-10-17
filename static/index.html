@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interview Coach</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>💼 Interview Coach <span class="tag">prototype</span></h1>
+    <p class="sub">A live mock interview. The interviewer asks a question and you answer out loud. While you speak, a coach tracks your pace, filler words, volume, tone and pauses.</p>
+  </header>
+
+  <!-- setup -->
+  <section id="setup" class="card">
+    <h2>Set up your mock interview</h2>
+    <div class="grid3">
+      <label>Role you're interviewing for<input id="role" value="Software Engineer Intern"></label>
+      <label>Interview type
+        <select id="itype">
+          <option value="mixed" selected>Mixed</option>
+          <option value="behavioral">Behavioral (STAR)</option>
+          <option value="general">General / HR</option>
+          <option value="technical">Technical talk-through</option>
+        </select>
+      </label>
+      <label>Questions
+        <select id="numQ"><option>3</option><option selected>5</option><option>8</option></select>
+      </label>
+    </div>
+    <label class="check"><input type="checkbox" id="voice" checked> Interviewer reads questions aloud</label>
+    <label class="check"><input type="checkbox" id="autoAdvance" checked> Move on automatically after 4 seconds of silence</label>
+    <div class="controls"><button id="startBtn" class="primary">🎙 Start interview</button></div>
+    <p id="aiStatus" class="status"></p>
+    <p class="status">Use Chrome for live transcripts. Use headphones if you can, so the mic doesn't pick up the interviewer's voice.</p>
+  </section>
+
+  <!-- live interview -->
+  <section id="interview" hidden>
+    <div class="layout">
+      <div class="card convo">
+        <div class="qhead"><span id="qnum"></span><span id="state" class="pill"></span></div>
+        <p id="question" class="question"></p>
+        <div id="answerBox" class="answer"></div>
+        <div class="controls">
+          <button id="doneBtn" class="primary">Done answering <kbd>Space</kbd></button>
+          <button id="skipBtn">Skip</button>
+          <button id="demoBtn" title="Plays a recorded sample answer through the live analyzer, for trying it without a mic">▶ Demo answer</button>
+          <button id="endBtn">End interview</button>
+        </div>
+        <p id="warn" class="warn" hidden></p>
+        <div id="history"></div>
+      </div>
+
+      <aside class="card coach">
+        <h3>Live coach</h3>
+        <div id="toast" class="toast"></div>
+        <div class="gauge">
+          <div class="gl"><span>Answer time</span><b id="gTime">0:00</b></div>
+          <div class="zone" style="--lo:30%;--hi:80%"><i id="zTime"></i></div>
+          <small id="nTime">aim for 45s – 2 min</small>
+        </div>
+        <div class="gauge">
+          <div class="gl"><span>Pace</span><b id="gPace">—</b></div>
+          <div class="zone" style="--lo:43.75%;--hi:62.5%"><i id="zPace"></i></div>
+          <small id="nPace">130–160 wpm is ideal</small>
+        </div>
+        <div class="gauge" id="fillGauge">
+          <div class="gl"><span>Filler words</span><b id="gFill">0</b></div>
+          <small id="nFill">none yet</small>
+        </div>
+        <div class="gauge">
+          <div class="gl"><span>Volume</span><b id="gVol">—</b></div>
+          <canvas id="volCanvas" height="40"></canvas>
+        </div>
+        <div class="gauge">
+          <div class="gl"><span>Vocal variety</span><b id="gPitch">—</b></div>
+          <canvas id="pitchCanvas" height="48"></canvas>
+        </div>
+        <div class="gauge">
+          <div class="gl"><span>Pauses</span><b id="gPause">0</b></div>
+          <small id="nPause">—</small>
+        </div>
+        <h3>Nudges</h3>
+        <ul id="feed" class="feed"></ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- summary -->
+  <section id="summary" class="card" hidden>
+    <div class="score-head">
+      <div class="big"><span id="sOverall">–</span><small>/100</small></div>
+      <div><h2>Interview summary</h2><p id="sOverallMsg"></p></div>
+    </div>
+    <div id="sAI"></div>
+    <h3>Question by question</h3>
+    <div class="table-wrap"><table id="sTable"></table></div>
+    <div class="controls"><button id="againBtn" class="primary">New interview</button></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
