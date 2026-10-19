@@ -1,0 +1,8 @@
+ctranslate2==4.8.3
+faster-whisper==1.2.1
+jiwer==4.0.0
+matplotlib==3.11.2
+numpy==2.5.4
+opensmile==2.6.0
+pillow==13.0.0
+soundfile==0.14.0

@@ -1,0 +1,116 @@
+{
+ "rows": [
+  {
+   "model": "base",
+   "clip": "clean_us",
+   "prompted": false,
+   "fillers_ref": 4,
+   "fillers_hyp": 4,
+   "wer": 0.0,
+   "text": "tell me about yourself. Sure, um, so I'm a third year computer science student at the University of Toronto. Last summer I interned at a Fintech startup where I, uh, built the data pipeline for their fraud detection system, the pipeline processed about 2 million transactions a day, and I reduced the end to end latency from 40 seconds to under 5. I'm drawn to this role because, you know, I really enjoy working on systems where performance actually matters to the user."
+  },
+  {
+   "model": "base",
+   "clip": "clean_us",
+   "prompted": true,
+   "fillers_ref": 4,
+   "fillers_hyp": 4,
+   "wer": 0.0,
+   "text": "Tell me about yourself. Sure. Um, so I'm a third -year computer science student at the University of Toronto. Last summer I interned at a Fintech startup where I, uh, built the data pipeline for their fraud detection system, the pipeline processed about two million transactions a day, and I reduced the end -to -end latency from 40 seconds to under five. I'm drawn to this role because, you know, I really enjoy working on systems where performance actually matters to the user."
+  },
+  {
+   "model": "base",
+   "clip": "fast_uk",
+   "prompted": false,
+   "fillers_ref": 2,
+   "fillers_hyp": 2,
+   "wer": 0.0319,
+   "text": "But describe a time you handled a conflict on a team, okay? So in my second year we had a group project for our software design course. One teammate kept missing deadlines and, like, the rest of us were getting frustrated. Instead of complaining to the professor, I set up a quick one -on -one with him and it turned out he was dealing with a family issue. We resplid the work so he had smaller, more flexible tasks. We ended up submitting on time and actually got the highest mark in the section."
+  },
+  {
+   "model": "base",
+   "clip": "fast_uk",
+   "prompted": true,
+   "fillers_ref": 2,
+   "fillers_hyp": 2,
+   "wer": 0.0213,
+   "text": "Describe a time you handled a conflict on a team. Okay. So in my second year we had a group project for our software design course. One teammate kept missing deadlines and, like, the rest of us were getting frustrated. Instead of complaining to the professor, I set up a quick one on one with him and it turned out he was dealing with a family issue. We resplid the work so he had smaller, more flexible tasks. We ended up submitting on time and actually got the highest mark in the section. ."
+  },
+  {
+   "model": "base",
+   "clip": "slow_au",
+   "prompted": false,
+   "fillers_ref": 4,
+   "fillers_hyp": 4,
+   "wer": 0.0123,
+   "text": "What is your biggest weakness? Honestly, I think my biggest weakness is that I, um, tend to over -engineer things. On my last project I spent two days building a configuration system that we never really needed, what I'm doing about it is I now write down the simplest version first, and I ask a teammate whether the extra complexity is actually worth it before I build it, it's Basically forced me to ship faster in, uh, to get feedback earlier."
+  },
+  {
+   "model": "base",
+   "clip": "slow_au",
+   "prompted": true,
+   "fillers_ref": 4,
+   "fillers_hyp": 4,
+   "wer": 0.0,
+   "text": "What is your biggest weakness? Honestly, I think my biggest weakness is that I, um, tend to over -engineer things. On my last project I spent two days building a configuration system that we never really needed, what I'm doing about it is I now write down the simplest version first, and I ask a teammate whether the extra complexity is actually worth it before I build it, it's basically forced me to ship faster and, uh, to get feedback earlier."
+  },
+  {
+   "model": "small",
+   "clip": "clean_us",
+   "prompted": false,
+   "fillers_ref": 4,
+   "fillers_hyp": 4,
+   "wer": 0.0241,
+   "text": "Tell me about yourself. Sure. Um. So I'm a third year computer science student at the University of Toronto. Last summer I interned at a Fintech startup where I, uh, built the data pipeline for their fraud detection system. The pipeline processed about 2 million transactions a day, and I reduced the end -to -end latency from 40 seconds to under 5. I'm drawn to this role because, you know, I really enjoy working on systems where performance actually It really matters to the user."
+  },
+  {
+   "model": "small",
+   "clip": "clean_us",
+   "prompted": true,
+   "fillers_ref": 4,
+   "fillers_hyp": 4,
+   "wer": 0.0,
+   "text": "Tell me about yourself. Sure. Um. So I'm a third -year computer science student at the University of Toronto. Last summer I interned at a Fintech startup where I, uh, built the data pipeline for their fraud detection system. The pipeline processed about 2 million transactions a day, and I reduced the end -to -end latency from 40 seconds to under 5. I'm drawn to this role because, you know, I really enjoy working on systems where performance actually matters to the user."
+  },
+  {
+   "model": "small",
+   "clip": "fast_uk",
+   "prompted": false,
+   "fillers_ref": 2,
+   "fillers_hyp": 2,
+   "wer": 0.0319,
+   "text": "Describe a time you handled a conflict on a team. OK, so in my second year we had a group project for our software design course. One teammate kept missing deadlines and, like, the rest of us were getting frustrated. Instead of complaining to the professor, I set up a quick one -on -one with him and it turned out he was dealing with a family issue. We resplit the work so he had smaller, more flexible tasks. We ended up submitting on time and actually got the highest mark in the section."
+  },
+  {
+   "model": "small",
+   "clip": "fast_uk",
+   "prompted": true,
+   "fillers_ref": 2,
+   "fillers_hyp": 2,
+   "wer": 0.0213,
+   "text": "Describe a time you handled a conflict on a team. Okay, so in my second year we had a group project for our software design course. One teammate kept missing deadlines and, like, the rest of us were getting frustrated. Instead of complaining to the professor, I set up a quick one -on -one with him and it turned out he was dealing with a family issue. We resplit the work so he had smaller, more flexible tasks. We ended up submitting on time and actually got the highest mark in the section."
+  },
+  {
+   "model": "small",
+   "clip": "slow_au",
+   "prompted": false,
+   "fillers_ref": 4,
+   "fillers_hyp": 3,
+   "wer": 0.0123,
+   "text": "What is your biggest weakness? Honestly, I think my biggest weakness is that I, um, tend to over -engineer things. On my last project I spent two days building a configuration system that we never really needed. What I'm doing about it is I now write down the simplest version first, and I ask a teammate whether the extra complexity is actually worth it before I build it. It's basically forced me to ship faster and her to get feedback earlier"
+  },
+  {
+   "model": "small",
+   "clip": "slow_au",
+   "prompted": true,
+   "fillers_ref": 4,
+   "fillers_hyp": 3,
+   "wer": 0.0123,
+   "text": "What is your biggest weakness? Honestly, I think my biggest weakness is that I, um, tend to over -engineer things. On my last project I spent two days building a configuration system that we never really needed. What I'm doing about it is I now write down the simplest version first, and I ask a teammate whether the extra complexity is actually worth it before I build it. It's basically forced me to ship faster and her to get feedback earlier"
+  }
+ ],
+ "recall": {
+  "default": 0.95,
+  "prompted": 0.95
+ }
+}

@@ -48,3 +48,21 @@ With auto-advance on, 4 seconds of silence ends the answer. Space also ends it.
 - The mic is blocked in the Claude app's built-in browser, so use real Chrome.
 - The "um" detector and all score thresholds are rough guesses and haven't been calibrated against real speakers.
 - Without headphones, the mic can pick up the interviewer's voice. Analysis pauses while the interviewer speaks.
+
+## Research: Whisper + openSMILE pipeline (`research/`)
+
+An offline pipeline that evaluates speech-to-text and vocal-feature extraction for the final system.
+**[research/COMPONENTS.md](research/COMPONENTS.md)** has one spec card per component: input/output format and
+dimensions, latency, CPU/GPU and memory, licence, a success example and a failure case.
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r research/requirements.txt
+.venv/bin/python research/analyze.py research/clips/clean_us.wav --model small   # one clip: timestamped transcript + metrics + openSMILE
+.venv/bin/python research/benchmark.py            # 6 Whisper sizes × test clips: WER, latency
+.venv/bin/python research/profile_components.py   # memory, 5 s chunk latency, failure cases
+.venv/bin/python research/figures.py              # charts in research/media/
+```
+
+The first run downloads Whisper weights (72 MB for tiny up to 2.9 GB for large-v3). Test clips in `research/clips/` are
+synthetic (macOS text-to-speech) with exact reference transcripts. Add real recordings as `name.wav` plus `name.txt`.
+Note that **openSMILE is licensed for non-commercial research only**.
