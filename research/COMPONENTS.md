@@ -42,8 +42,9 @@ than real speech, so treat accuracy as optimistic. See *Limits* at the end.
 Load time excludes the one-off download. Peak RAM is the whole process (Python + runtime ≈ 0.1 GB of it).
 
 Note the **5 s chunk** column: a short chunk costs almost as much as a long one for the larger
-models (large-v3: 5.9 s for 5 s of audio) because every call pads to a 30 s window. Only tiny,
-base and small can keep up with live 5 s chunks on this CPU.
+models (large-v3: 5.9 s for 5 s of audio) because every call pads to a 30 s window. tiny, base
+and small keep up with live 5 s chunks easily; medium and distil-large-v3 only just (3.7 s per 5 s);
+large-v3 cannot on this CPU.
 
 ### Success example
 `clean_us.wav`, Whisper small, word-perfect (0 errors / 83 words), including the fillers:
@@ -198,7 +199,8 @@ Two loops with different budgets:
 
 **Live loop (while speaking, every 50 ms):** browser analyser (0.09 ms) + Web Speech API. Comfortable
 on any laptop. To drop the Google dependency, Whisper **tiny or base** can transcribe 5 s chunks in
-0.27–0.43 s (5–9% of real time); **small** in 1.2 s (24%); medium and larger cannot keep up on CPU.
+0.27–0.43 s (5–9% of real time); **small** in 1.2 s (24%); medium and distil-large-v3 in 3.7 s (74%, little
+headroom); large-v3 cannot keep up on CPU.
 
 **After each answer (the user waits for feedback):** for a 30 s answer on CPU:
 
